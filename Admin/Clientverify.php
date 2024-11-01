@@ -90,7 +90,7 @@ if (isset($_GET['rej'])) {
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Place</th>
-                        <th scope="col">Address</th>
+                        <th scope="col" style="width:200px !important;">Address</th>
                         <th scope="col">Photo</th>
                         <th scope="col">Proof</th>
                         <th scope="col">Date of Birth</th>
@@ -112,7 +112,7 @@ if (isset($_GET['rej'])) {
                             <td><?php echo $data['client_name'] ?></td>
                             <td><?php echo $data['client_email'] ?></td>
                             <td><?php echo $data['place_name'] ?></td>
-                            <td><?php echo $data['client_address'] ?></td>
+                            <td  ><?php echo $data['client_address'] ?></td>
                             <td><a href="../Asset/Files/Client/Photo/<?php echo $data['client_photo'] ?>"><img src="../Asset/Files/Client/Photo/<?php echo $data['client_photo'] ?>" alt="Client Photo" /></a></td>
                             <td><a href="../Asset/Files/Client/Proof/<?php echo $data['client_proof'] ?>"><img src="../Asset/Files/Client/Proof/<?php echo $data['client_proof'] ?>" alt="Client Proof" /></a></td>
 
