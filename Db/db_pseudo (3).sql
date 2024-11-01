@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Nov 01, 2024 at 10:17 AM
+=======
+-- Generation Time: Oct 12, 2024 at 09:10 AM
+>>>>>>> 84d0612fdbac1f6f53c666bfd5852e1adc8add43
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -218,7 +222,11 @@ CREATE TABLE `tbl_freelan` (
 
 INSERT INTO `tbl_freelan` (`freelan_id`, `freelan_name`, `freelan_email`, `place_id`, `freelan_address`, `freelan_photo`, `freelan_proof`, `freelan_password`, `freelan_dob`, `freelan_contact`, `freelan_status`, `freelan_gender`) VALUES
 (9, 'Adithyan Suresh', 'adithyanms175@gmail.com', 16, '      	Maniyattussery          ', 'Screenshot 2024-04-15 123855.png', 'Screenshot 2024-04-28 095228.png', '8086649683', '2024-05-21', '7012489987', 1, 'Male'),
+<<<<<<< HEAD
 (11, 'Athul', 'athul@gmail.com', 18, 'hgxgh', 'Screenshot 2024-05-11 192622.png', 'Screenshot 2024-04-15 170954.png', '456', '2024-05-09', '9946413745', 1, 'Male'),
+=======
+(11, 'athul', 'athul@gmail.com', 18, 'hgxgh', 'Screenshot 2024-05-11 192622.png', 'Screenshot 2024-04-15 170954.png', '456', '2024-05-09', '3216549870', 1, 'Male'),
+>>>>>>> 84d0612fdbac1f6f53c666bfd5852e1adc8add43
 (21, 'Arsha', 'arsha@gmail.com', 13, 'fllifuisdfdfd', 'Screenshot 2024-04-28 095228.png', 'Screenshot 2024-05-06 193406.png', 'Arsha2', '2004-05-30', '98546321', 1, ''),
 (22, 'Arsha', 'arsha14@gmail.com', 13, 'xmgajgakhakjdhka', 'pseudo-1.png', 'pseudo-2.png', 'Ad3ith', '2004-02-25', '9854632111', 2, 'Female'),
 (23, 'Fariz', 'fariz@gmail.com', 14, 'kklsucuddcdcuducdj', 'Screenshot 2024-04-15 170954 (3).png', 'pseudo-1.png', 'Fariz23', '2024-07-09', '9456812307', 1, 'Male'),
@@ -302,9 +310,13 @@ INSERT INTO `tbl_request` (`request_id`, `freelan_id`, `work_id`, `status`, `req
 (4, 11, 6, 4, '2024-08-05', '2024-08-05', '2024-08-05'),
 (5, 11, 5, 1, '2024-08-07', '', '2024-08-07'),
 (6, 11, 9, 4, '2024-08-08', '2024-08-08', '2024-08-08'),
+<<<<<<< HEAD
 (7, 11, 8, 0, '2024-10-08', '', ''),
 (8, 9, 8, 1, '2024-10-13', '', '2024-10-13'),
 (9, 23, 10, 1, '2024-10-13', '', '2024-10-13');
+=======
+(7, 11, 8, 0, '2024-10-08', '', '');
+>>>>>>> 84d0612fdbac1f6f53c666bfd5852e1adc8add43
 
 -- --------------------------------------------------------
 
@@ -384,9 +396,15 @@ INSERT INTO `tbl_work` (`work_id`, `work_name`, `work_price`, `work_details`, `w
 (5, 'Food delivery app', '1500', 'i want a food delivery app for buisness', 'b1gen7al.png', 30, 3, '', 1),
 (6, 'Data Entry', '1000', 'i want website for data entry ', 'originalviewworks.php', 30, 4, 'BCA,BSc Comp Science,Comp Appln,IT.pdf', 1),
 (7, 'Logo', '500', 'create a logo for my business', 'newmyworksfreelan.php', 30, 8, '', 0),
+<<<<<<< HEAD
 (8, 'Amazon', '1500', 'create a website for shopping', 'Screenshot 2024-05-06 193406.png', 30, 4, '', 1),
 (9, 'facebook', '2500', 'create a platform for posting content', 'BCA,BSc Comp Science,Comp Appln,IT (3).pdf', 30, 3, 'db_pseudo.sql', 1),
 (10, 'School management', '45000', 'school management website', 'BCA,BSc Comp Science,Comp Appln,IT (3).pdf', 30, 5, '', 1),
+=======
+(8, 'Amazon', '1500', 'create a website for shopping', 'Screenshot 2024-05-06 193406.png', 30, 4, '', 0),
+(9, 'facebook', '2500', 'create a platform for posting content', 'BCA,BSc Comp Science,Comp Appln,IT (3).pdf', 30, 3, 'db_pseudo.sql', 1),
+(10, 'School management', '45000', 'school management website', 'BCA,BSc Comp Science,Comp Appln,IT (3).pdf', 30, 5, '', 0),
+>>>>>>> 84d0612fdbac1f6f53c666bfd5852e1adc8add43
 (11, 'zomato', '78787', 'food delivery app', 'db_pseudo.sql', 30, 3, '', 0);
 
 --
@@ -533,7 +551,11 @@ ALTER TABLE `tbl_place`
 -- AUTO_INCREMENT for table `tbl_request`
 --
 ALTER TABLE `tbl_request`
+<<<<<<< HEAD
   MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+=======
+  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+>>>>>>> 84d0612fdbac1f6f53c666bfd5852e1adc8add43
 
 --
 -- AUTO_INCREMENT for table `tbl_review`
