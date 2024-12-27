@@ -114,6 +114,7 @@ if(isset($_GET['did'])!=null)
                 <th scope="col">Complaint</th>
                 <th scope="col">Date</th>
                 <th scope="col">Reply</th>
+                <th scope="col">Reply Date</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -139,6 +140,7 @@ if(isset($_GET['did'])!=null)
                 <td><?php echo $data['complaint_details'] ?></td>
                 <td><?php echo $data['complaint_date'] ?></td>
                 <td><?php echo $data['complaint_reply'] ?></td>
+                <td><?php echo $data['complaint_rdate'] ?></td>
                 <td><a href="Clientcomplaint.php?did=<?php echo $data['complaint_id']?>" class="btn btn-danger btn-sm">Delete</a></td>
             </tr>
             <?php

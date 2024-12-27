@@ -80,7 +80,7 @@ if (isset($_GET['rej'])) {
 
 <body>
     <div class="container table-container">
-    <h2> Client Verification</h2>
+        <h2> Client Verification</h2>
         <form action="" method="post" name="frm_Cverify">
             <table class="table table-bordered table-striped text-center">
                 <thead class="thead-dark">
@@ -112,7 +112,7 @@ if (isset($_GET['rej'])) {
                             <td><?php echo $data['client_name'] ?></td>
                             <td><?php echo $data['client_email'] ?></td>
                             <td><?php echo $data['place_name'] ?></td>
-                            <td  ><?php echo $data['client_address'] ?></td>
+                            <td><?php echo $data['client_address'] ?></td>
                             <td><a href="../Asset/Files/Client/Photo/<?php echo $data['client_photo'] ?>"><img src="../Asset/Files/Client/Photo/<?php echo $data['client_photo'] ?>" alt="Client Photo" /></a></td>
                             <td><a href="../Asset/Files/Client/Proof/<?php echo $data['client_proof'] ?>"><img src="../Asset/Files/Client/Proof/<?php echo $data['client_proof'] ?>" alt="Client Proof" /></a></td>
 
