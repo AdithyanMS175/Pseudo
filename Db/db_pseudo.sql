@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2024 at 08:57 AM
+-- Generation Time: Dec 28, 2024 at 11:41 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -204,6 +204,17 @@ CREATE TABLE `tbl_gallary` (
   `gallary_photo` varchar(100) NOT NULL,
   `work_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_gallary`
+--
+
+INSERT INTO `tbl_gallary` (`gallary_id`, `gallary_photo`, `work_id`) VALUES
+(1, 'dot-life-coaching-website-template-1024x510.jpg', 2),
+(2, 'dot-life-coaching-website-template-1024x510.jpg', 2),
+(3, 'dot-life-coaching-website-template-1024x510.jpg', 2),
+(4, 'Screenshot 2024-12-20 195203.png', 2),
+(5, 'Screenshot 2024-12-20 195203.png', 2);
 
 -- --------------------------------------------------------
 
@@ -495,7 +506,7 @@ ALTER TABLE `tbl_freelan`
 -- AUTO_INCREMENT for table `tbl_gallary`
 --
 ALTER TABLE `tbl_gallary`
-  MODIFY `gallary_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `gallary_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_place`
