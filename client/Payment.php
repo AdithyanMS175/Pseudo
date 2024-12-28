@@ -1,6 +1,6 @@
 <?php
 ob_start();
-session_start();
+include('SessionValidator.php');
 include('../Asset/Connection/Connection.php');
 if (isset($_POST["btn_pay"])) {
 

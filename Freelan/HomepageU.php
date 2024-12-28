@@ -1,5 +1,5 @@
 <!-- <?php
-        session_start();
+        
         include('../Asset/connection/connection.php');
         include('SessionValidator.php');
         ?>

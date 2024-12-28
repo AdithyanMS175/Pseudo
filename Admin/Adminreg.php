@@ -1,6 +1,6 @@
 <?php 
 include('../Asset/connection/connection.php');
-include('SessionValidator.php');
+
 include('Header.php');
 if(isset($_POST['btn_reg'])!=null)
 {

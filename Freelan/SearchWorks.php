@@ -1,6 +1,6 @@
 <?php
 ob_start();
-include('SessionValidator.php');
+
 include("../Asset/Connection/Connection.php");
 include('Header.php');
 

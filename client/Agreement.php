@@ -1,6 +1,5 @@
 <?php
 include('../Asset/Connection/Connection.php');
-include('SessionValidator.php');
 include('Header.php');
 
 if (isset($_GET['rid'])) {

@@ -1,7 +1,6 @@
 <?php
 include('../Asset/connection/connection.php');
 
-include('SessionValidator.php');
 
 include('Header.php');
 

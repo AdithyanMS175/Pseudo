@@ -1,6 +1,6 @@
 <?php
 include('../Asset/Connection/Connection.php');
-include('SessionValidator.php');
+
 include('Header.php');
 
 $selqry = "select * from tbl_request u inner join tbl_work p on u.work_id = p.work_id inner join tbl_freelan s on u.freelan_id = s.freelan_id inner join tbl_client k on p.client_id = k.client_id where u.request_id=" . $_SESSION['rid'];
