@@ -124,18 +124,19 @@ if (isset($_POST['btn_save'])) {
   <link href="../Asset/Templates/Login/assets/css/style.css" rel="stylesheet">
 
   <title>Sign In</title>
-<style>
-  .new {
-  display: block;
-  text-align:left;
-  margin-bottom: 20px;
-  margin-left:20px;
-}
-input[type='submit']{
-  border:none;
-  color:white;
-}
-</style>
+  <style>
+    .new {
+      display: block;
+      text-align: left;
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
+
+    input[type='submit'] {
+      border: none;
+      color: white;
+    }
+  </style>
 
 
 
@@ -167,18 +168,22 @@ input[type='submit']{
 
               <div class="form-group">
                 <label>Enter Password</label>
-                <input type="password" name="txt_password" class="form-control" type="text" placeholder="Enter Password" required="" aria-required="true">
+                <input type="password" name="txt_password" id="password" class="form-control" type="text" placeholder="Enter Password" required="" aria-required="true">
+<!-- 
+                <button type="button" id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                  <i class="fa fa-eye"></i>
+                </button> -->
               </div>
 
               <div class="checkbox mb-0 form-group">
-                
+
                 <a href="Forgotpassword.php">Forgot Password?</a>
               </div>
 
               <div class="form-group">
 
                 <!-- <div class="_btn_04"> -->
-                <input type="submit" class="_btn_04" name="btn_save" value="Login">
+                <input type="submit" class="_btn_04" name="btn_save" id="togglePassword" value="Login">
                 <!-- <a href="#">Login</a> -->
                 <!-- </div> -->
               </div>
@@ -193,6 +198,28 @@ input[type='submit']{
       </div>
     </form>
   </section>
+
+  <script>
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordField = document.getElementById('password');
+
+    togglePassword.addEventListener('click', function() {
+      // Toggle the type attribute
+      const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordField.setAttribute('type', type);
+
+      // Toggle the eye icon
+      this.innerHTML = type === 'password' ? '<i class="fa fa-eye"></i>' : '<i class="fa fa-eye-slash"></i>';
+    });
+  </script>
+
+
+
+
+
 </body>
+
+
+
 
 </html>

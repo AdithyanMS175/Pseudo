@@ -1,6 +1,8 @@
 
 
-
+<?php
+include("SessionValidator.php");
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -70,9 +72,9 @@ https://templatemo.com/tm-590-topic-listing
                                 <a class="nav-link " href="Myworks.php">My works</a>
                             </li>
 
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" href="Freelancomplaint.php">Complaint</a>
-                            </li>  -->
+                            <li class="nav-item">
+                            <a class="nav-link" href="ViewReview.php">View Review</a>
+                            </li>
     
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="#section_5">Contact</a>

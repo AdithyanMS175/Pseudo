@@ -38,9 +38,9 @@ $data = $work->fetch_assoc();
         border-radius: 25px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         transition: 0.3s;
-        width: fit-content;
+        width: 700px;
         height: fit-content;
-        min-width: 500px;
+        min-width: 300px;
         min-height: 300px;
 
 
