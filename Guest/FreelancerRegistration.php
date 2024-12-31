@@ -286,7 +286,7 @@ if (isset($_POST['btn_submit'])) {
       <div class="form-group">
         <label for="txt_address">Address</label>
         <textarea name="txt_address" id="txt_address" cols="45" rows="5" required
-          oninput="addressCheck(this.value)"></textarea>
+          onSubmit="addressCheck(this.value)"></textarea>
         <span id="addresscheck"></span><br>
       </div>
       <div class="form-group">

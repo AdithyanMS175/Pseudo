@@ -82,7 +82,7 @@ if (isset($_GET['did']) != null) {
             <div class="form-group row">
               <label for="txt_details" class="col-sm-4 col-form-label">Details</label>
               <div class="col-sm-8">
-                <textarea class="form-control" id="txt_details" name="txt_details" rows="5" required>explain in detail</textarea>
+                <textarea class="form-control" id="txt_details" name="txt_details" rows="5" placeholder="explain in detail" required></textarea>
               </div>
             </div>
             <br>
