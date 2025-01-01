@@ -6,7 +6,7 @@ if (isset($_POST['btn_save']) != null) {
   $catid = $_POST["selcat"];
   $subcat_name = $_POST['txt_subcat'];
 
-  $check = "select subcat_id from tbl_subcat where subcat_name='$subcat_name' ";
+  $check = "select subcat_id from tbl_subcat where subcat_name='$subcat_name' and category_id='$catid'";
   $result = $con->query($check);
 
   if ($result->num_rows > 0) {

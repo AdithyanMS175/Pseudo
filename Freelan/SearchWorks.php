@@ -22,7 +22,7 @@ include('Header.php');
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3">
-                <h5>Works</h5>
+                <h5>Filter</h5>
                 <hr>
                 <h6 class="text-info"> Search</h6>
                 <ul class="list-group">

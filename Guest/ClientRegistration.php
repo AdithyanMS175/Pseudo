@@ -23,7 +23,7 @@ if (isset($_POST['btn_submit'])) {
 ?>
       <script>
         alert('Client Registration Successfull')
-        window.location = '../index.php';
+        window.location = 'Login.php';
       </script>
     <?php
     } else {

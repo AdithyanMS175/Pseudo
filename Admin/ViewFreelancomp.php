@@ -44,6 +44,15 @@ if(isset($_GET['did']))
     .container {
         padding: 20px;
     }
+  
+    .table td {
+        word-wrap: break-word; /* Wraps normal words */
+        word-break: break-word; /* Breaks long words */
+        white-space: normal; /* Prevents text from staying on one line */
+    }
+    .table-responsive {
+        overflow-x: auto; /* Maintains responsiveness for small screens */
+    }
 </style>
 
 </head>
@@ -59,7 +68,7 @@ if(isset($_GET['did']))
                         <th>Work name</th>
                         <th>Freelancer name</th>
                         <th>Complaint</th>
-                        <th>Reply</th>
+                        <th >Reply</th>
                         <th>Date</th>
                         <th>Action</th>
                     </tr>

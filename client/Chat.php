@@ -45,7 +45,7 @@ $row = $res->fetch_assoc();
                 <div class="nav-start">
                     <div class="recipient-block">
                         <div class="avatar-container">
-                            <img class="user-avatar" src="../Asset/Files/Freelan/Photo/<?php echo $row['freelan_photo'] ?>" style="    height: 41px;" alt="">
+                            <img class="user-avatar" src="../Asset/Files/Freelan/Photo/<?php echo $row['freelan_photo'] ?>"  alt="">
                         </div>
                         <div class="username">
                             <span><?php echo $row["freelan_name"] ?></span>
@@ -90,7 +90,7 @@ $row = $res->fetch_assoc();
         function sendChat(id) {
 
             var chat = document.getElementById("msg").value;
-            if (chat.length <= 35) {
+            if (chat.length <= 5000) {
                 $.ajax({
                     url: "../Asset/AjaxPages/AjaxCChat.php?chat=" + chat + "&id=" + id,
                     success: function(result) {
@@ -106,7 +106,7 @@ $row = $res->fetch_assoc();
                     }
                 });
             } else {
-                alert("Character Length less Than 35 Allowed");
+                alert("Character Length less Than 5000 Allowed");
                 document.getElementById("msg").value = "";
 
                 $('#conversation').animate({

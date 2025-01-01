@@ -99,7 +99,7 @@ $row = $res->fetch_assoc();
                                     {
 
                                         var chat = document.getElementById("msg").value;
-                                        if (chat.length <= 35)
+                                        if (chat.length <= 5000)
                                         {
                                             $.ajax({url: "../Asset/AjaxPages/AjaxFChat.php?chat=" + chat+"&id="+id,
                                                 success: function(result) {
@@ -114,7 +114,7 @@ $row = $res->fetch_assoc();
                                         }
                                         else
                                         {
-                                            alert("Character Length less Than 35 Allowed");
+                                            alert("Character Length less Than 5000 Allowed");
                                             document.getElementById("msg").value = "";
 
                                             $('#conversation').animate({scrollTop: $('#conversation')[0].scrollHeight});

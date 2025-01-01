@@ -3,13 +3,13 @@ include('../Asset/Connection/Connection.php');
 
 include('Header.php');
 
-
+$client_id=$_SESSION['cid'];
 
 if(isset($_POST['btn_submit']))
 {
 	
 	$complaint=$_POST['txt_complaint'];
-	$insqry="insert into tbl_complaint(client_id,request_id,complaint_details,complaint_date)values('".$_SESSION['cid']."','".$_GET['rid']."','$complaint',curdate()) ";
+	$insqry="insert into tbl_complaint(client_id,request_id,complaint_details,complaint_date)values('$client_id','".$_GET['rid']."','$complaint',curdate()) ";
 	if($con->query($insqry))
 	{
         ?>
@@ -97,6 +97,7 @@ if(isset($_GET['did'])!=null)
         <div class="form-group">
             <textarea class="form-control" name="txt_complaint" id="txt_complaint" placeholder="Enter your complaint"></textarea>
         </div>
+        <br>
         <div class="form-group text-center">
             <button type="submit" name="btn_submit" class="btn btn-primary">Submit</button>
         </div>

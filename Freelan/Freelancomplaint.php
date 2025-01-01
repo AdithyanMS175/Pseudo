@@ -3,13 +3,13 @@ include('../Asset/Connection/Connection.php');
 
 include('Header.php');
 
-
+$freelan_id=$_SESSION['fid'];
 
 if(isset($_POST['btn_submit']))
 {
 	
 	$complaint=$_POST['txt_complaint'];
-	$insqry="insert into tbl_complaint(freelan_id,complaint_details,complaint_date,request_id,complaint_status)values('".$_SESSION['fid']."','$complaint',curdate(),'".$_GET['rid']."','1')";
+	$insqry="insert into tbl_complaint(freelan_id,complaint_details,complaint_date,request_id,complaint_status)values('$freelan_id','$complaint',curdate(),'".$_GET['rid']."','1')";
 	if($con->query($insqry))
 	{
         ?>
@@ -23,7 +23,7 @@ if(isset($_POST['btn_submit']))
 	else{
 		?>
         <script>
-            alert("failed");
+            alert("complaint not submitted");
 			
         </script>
         <?php
@@ -103,6 +103,7 @@ if(isset($_GET['did']))
         <div class="form-group">
             <textarea class="form-control" name="txt_complaint" id="txt_complaint" placeholder="Enter your complaint"></textarea>
         </div>
+        <br>
         <div class="form-group text-center">
             <button type="submit" name="btn_submit" class="btn btn-primary">Submit</button>
         </div>

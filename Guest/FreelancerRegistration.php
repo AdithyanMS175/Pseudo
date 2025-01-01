@@ -26,7 +26,7 @@ if (isset($_POST['btn_submit'])) {
       ?>
       <script>
         alert('Freelancer Registration Successfull')
-        window.location = '../index.php';
+        window.location = 'Login.php';
       </script>
       <?php
     } else {
@@ -240,7 +240,7 @@ if (isset($_POST['btn_submit'])) {
     <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
       <div class="form-group">
         <label for="txt_name">Name</label>
-        <input type="text" name="txt_name" id="txt_name" required oninput="nameCheck(this.value)" />
+        <input type="text" name="txt_name" id="txt_name" pattern="^[A-Z][a-zA-Z ]{1,}$" required oninput="nameCheck(this.value)" />
         <span id="namecheck"></span>
       </div>
       <div class="form-group">
@@ -354,6 +354,7 @@ if (isset($_POST['btn_submit'])) {
         }
       });
     }
+    
 
     function emailCheck(email) {
       const submitButton = document.getElementById('btn_submit');

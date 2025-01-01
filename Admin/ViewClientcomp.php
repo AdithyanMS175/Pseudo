@@ -43,6 +43,17 @@ if(isset($_GET['did']))
         .container {
             padding: 20px;
         }
+        .table td {
+        word-wrap: break-word; /* Wraps normal words */
+        word-break: break-word; /* Breaks long words */
+        white-space: normal; /* Prevents text from staying on one line */
+    }
+    .table-responsive {
+        overflow-x: auto; /* Maintains responsiveness for small screens */
+    }
+    .table-bordered td {
+    border: 1px solid #dee2e6;
+}
     </style>
 </head>
 <body>
@@ -73,12 +84,12 @@ if(isset($_GET['did']))
                             $i++;
                     ?>
                     <tr>
-                        <td><?php echo $i ?></td>
-                        <td><?php echo $data['work_name'] ?></td>
-                        <td><?php echo $data['client_name'] ?></td>
-                        <td><?php echo $data['complaint_details'] ?></td>
-                        <td><?php echo $data['complaint_reply'] ?></td>
-                        <td><?php echo $data['complaint_date'] ?></td>
+                        <td classname="table-bordered td"><?php echo $i ?></td>
+                        <td classname="table-bordered td"><?php echo $data['work_name'] ?></td>
+                        <td classname="table-bordered td"><?php echo $data['client_name'] ?></td>
+                        <td classname="table-bordered td"><?php echo $data['complaint_details'] ?></td>
+                        <td classname="table-bordered td"><?php echo $data['complaint_reply'] ?></td>
+                        <td classname="table-bordered td"><?php echo $data['complaint_date'] ?></td>
                         <td>
                             <a href="ViewClientcomp.php?did=<?php echo $data['complaint_id']?>" class="btn btn-danger btn-sm">Delete</a>
                             <a href="Reply.php?rep=<?php echo $data['complaint_id']?>" class="btn btn-primary btn-sm">Reply</a>
