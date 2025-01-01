@@ -88,7 +88,7 @@ if(isset($_GET['act']))
                 <?php
                 $selqry="select * from tbl_request u 
                  inner join tbl_work p on u.work_id = p.work_id 
-                 inner join tbl_freelan s on u.freelan_id = s.freelan_id where u.status='0' and p.client_id=".$_SESSION["cid"];
+                 inner join tbl_freelan s on u.freelan_id = s.freelan_id where u.status='0'and p.work_status='0' and p.client_id=".$_SESSION["cid"];
                 $req=$con->query($selqry);
                 $i=0;
                 while($data=$req->fetch_assoc()) {

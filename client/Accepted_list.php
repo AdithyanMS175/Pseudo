@@ -69,7 +69,7 @@ if (isset($_GET['rej'])) {
                    INNER JOIN tbl_work p ON u.work_id = p.work_id 
                    INNER JOIN tbl_freelan s ON u.freelan_id = s.freelan_id 
                    INNER JOIN tbl_client k ON p.client_id = k.client_id 
-                   WHERE p.work_status = '1' AND status != '2' AND p.client_id=" . $_SESSION['cid'];
+                   WHERE u.status = '1' AND status != '2' AND p.client_id=" . $_SESSION['cid'];
             $req = $con->query($selqry);
             while ($data = $req->fetch_assoc()) {
             ?>
