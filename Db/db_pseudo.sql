@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2024 at 11:41 AM
+-- Generation Time: Jan 01, 2025 at 04:55 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -81,6 +81,18 @@ CREATE TABLE `tbl_chat` (
   `chat_tofreelan` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tbl_chat`
+--
+
+INSERT INTO `tbl_chat` (`chat_id`, `chat_content`, `chat_datetime`, `chat_fromclient`, `chat_fromfreelan`, `chat_toclient`, `chat_tofreelan`) VALUES
+(1, 'Hi bro', 'December 31 2024, 08:59 PM', 4, 0, 0, 1),
+(2, 'I was checking your it  was awesome', 'December 31 2024, 08:59 PM', 4, 0, 0, 1),
+(3, 'thanks ', 'December 31 2024, 09:01 PM', 0, 1, 4, 0),
+(4, 'i will finish your work ', 'December 31 2024, 09:02 PM', 0, 1, 4, 0),
+(5, 'As soon as possible', 'December 31 2024, 09:02 PM', 0, 1, 4, 0),
+(6, 'i would like to ur on time response as fast as possible so be online', 'December 31 2024, 09:07 PM', 0, 1, 4, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -107,10 +119,11 @@ CREATE TABLE `tbl_client` (
 --
 
 INSERT INTO `tbl_client` (`client_id`, `client_name`, `client_email`, `place_id`, `client_address`, `client_photo`, `client_proof`, `client_password`, `client_dob`, `client_contact`, `client_status`, `client_gender`) VALUES
-(1, 'Ajin Benny', 'ajinbenny145@gmail.com', 16, 'caveri,kilimangalam', '7M.jpeg', 'd5dpp70g_car_120x90_14_January_22.webp', 'Ajin@123', '1988-06-05', '9832212154', 0, 'Male'),
+(1, 'Ajin Benny', 'ajinbenny145@gmail.com', 16, 'caveri,kilimangalam', '7M.jpeg', 'd5dpp70g_car_120x90_14_January_22.webp', 'Ajin@123', '1988-06-05', '9832212154', 1, 'Male'),
 (2, 'Adarsh P S', 'adarshps7700@gmail.com', 28, 'kannur house,paramadathil', '10M.jpeg', 'OIP.jpeg', 'Adarsh@123', '2003-07-08', '8529637414', 1, 'Male'),
 (3, 'Jerin Basil John', 'jerin145@gmail.com', 15, 'pattimattom house', '7M.jpeg', 'd5dpp70g_car_120x90_14_January_22.webp', 'Jerin@123', '2004-06-05', '9865327454', 1, 'Male'),
-(4, 'Fariz Sidheque', 'fariz@gmail.com', 39, 'palakkad house , porampalli veedu', '3M.jpeg', 'OIP.jpeg', 'Fariz@123', '2001-06-08', '9865325487', 1, 'Male');
+(4, 'Fariz Sidheque', 'fariz@gmail.com', 39, 'palakkad house , porampalli veedu', '3M.jpeg', 'OIP.jpeg', 'Fariz@123', '2001-06-08', '9865325487', 1, 'Male'),
+(5, 'sidharth', 'sidhart@gmail.com', 20, 'keeradam house,managalserry', 'man3.jpeg', 'd5dpp70g_car_120x90_14_January_22.webp', 'Sidharth@123', '2001-01-05', '7894561236', 0, 'Male');
 
 -- --------------------------------------------------------
 
@@ -129,6 +142,18 @@ CREATE TABLE `tbl_complaint` (
   `complaint_status` int(11) NOT NULL,
   `complaint_rdate` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_complaint`
+--
+
+INSERT INTO `tbl_complaint` (`complaint_id`, `complaint_details`, `complaint_date`, `complaint_reply`, `freelan_id`, `client_id`, `request_id`, `complaint_status`, `complaint_rdate`) VALUES
+(4, 'hhhhhhhh\r\n', '2025-01-01', '', 1, 0, 0, 1, ''),
+(5, 'hello', '2025-01-01', 'well it may be due to server error', 1, 0, 2, 2, '2025-01-01'),
+(6, 'flsdfksk lksdjfslfjlksjf dlfj slkfjlksdfjslkj slfjl sjfskj slfjflsd jflksj flsdfjlskjffslkflskjf lkdj lksj lkdfjk sjflksj flsdjfl jfklj klfjsdklfj lsdfj slfj sllfjslfsdjfnsjknf sn j njfns dnlfnsln fflnsll fnsllfn ldn lsfnslff slfnsk nfls nl lk nflknsdll ndll nfln lfn lnflsdf lfndjfnweoejrwoejrow jf nn lkd fkdf ldfljfldkf lj dldkff llj lfj j l   jd jfdifj djfd f doijf idjf djf oidf jdi ', '2025-01-01', '', 1, 0, 2, 1, ''),
+(7, 'hasn\'t completed yet', '2025-01-01', '', 1, 0, 2, 1, ''),
+(8, 'poster was bad', '2025-01-01', '', 1, 0, 2, 1, ''),
+(9, 'user has different opinions', '2025-01-01', '', 0, 4, 2, 0, '');
 
 -- --------------------------------------------------------
 
@@ -187,11 +212,12 @@ CREATE TABLE `tbl_freelan` (
 --
 
 INSERT INTO `tbl_freelan` (`freelan_id`, `freelan_name`, `freelan_email`, `place_id`, `freelan_address`, `freelan_photo`, `freelan_proof`, `freelan_password`, `freelan_dob`, `freelan_contact`, `freelan_status`, `freelan_gender`) VALUES
-(1, 'Adithyan M S', 'adithyanms175@gmail.com', 16, 'Maniyattussery,Pancode P O ,Parepidka\r\nKadayiriipu,Kolenchery,Ekm. ', '2M.jpeg', 'OIP.jpeg', 'Adith@123', '2004-09-09', '7012489987', 1, 'Male'),
-(2, 'Vaishak Rajesh', 'vaishak2004@gmail.com', 28, 'payyannur house,kurvela', '3M.jpeg', 'OIP.jpeg', 'Vaishak@123', '2004-09-09', '7889455612', 0, 'Male'),
-(3, 'Arsha Balakrishnan', 'arsha154@gmail.com', 47, 'kalpatte house manakkapuram road', '1.jpeg', 'OIP.jpeg', 'Arsha@123', '2004-09-09', '8578895636', 0, 'Male'),
-(4, 'emeesha', 'emeesha174@gmail.com', 34, 'paravur house,malikapuram', '4.jpeg', 'OIP.jpeg', 'Emeesha@123', '1999-09-09', '9356897845', 0, 'Male'),
-(5, 'Adarsh Manoj', 'adarshmanoj@gmail.com', 42, 'mangalathunada house,sabarimala', '5M.jpeg', 'OIP.jpeg', 'Adarsh@123', '2003-08-09', '9887655432', 1, 'Male');
+(1, 'Adithyan M S', 'adithyanms175@gmail.com', 16, 'Maniyattussry house pancode po parepidika', '2M.jpeg', 'OIP.jpeg', 'Adith@123', '2004-09-09', '7012489987', 1, 'Male'),
+(2, 'Vaishak Rajesh', 'vaishak2004@gmail.com', 28, 'payyannur house,kurvela', '3M.jpeg', 'OIP.jpeg', 'Vaishak@123', '2004-09-09', '7889455612', 1, 'Male'),
+(3, 'Arsha Balakrishnan', 'arsha154@gmail.com', 47, 'kalpatte house manakkapuram road', '1.jpeg', 'OIP.jpeg', 'Arsha@123', '2004-09-09', '8578895636', 1, 'Male'),
+(4, 'emeesha', 'emeesha174@gmail.com', 34, 'paravur house,malikapuram', '4.jpeg', 'OIP.jpeg', 'Emeesha@123', '1999-09-09', '9356897845', 1, 'Male'),
+(5, 'Adarsh Manoj', 'adarshmanoj@gmail.com', 42, 'mangalathunada house,sabarimala', '5M.jpeg', 'OIP.jpeg', 'Adarsh@123', '2003-08-09', '9887655432', 1, 'Male'),
+(6, 'vivek', 'vivek@gmail.com', 42, 'Adichipuzha dam near kottakkal', 'man1.jpeg', 'download.jpeg', 'Vivek@123', '2004-02-01', '8989565623', 0, 'Male');
 
 -- --------------------------------------------------------
 
@@ -214,7 +240,8 @@ INSERT INTO `tbl_gallary` (`gallary_id`, `gallary_photo`, `work_id`) VALUES
 (2, 'dot-life-coaching-website-template-1024x510.jpg', 2),
 (3, 'dot-life-coaching-website-template-1024x510.jpg', 2),
 (4, 'Screenshot 2024-12-20 195203.png', 2),
-(5, 'Screenshot 2024-12-20 195203.png', 2);
+(5, 'Screenshot 2024-12-20 195203.png', 2),
+(6, 'salaar.jpeg', 2);
 
 -- --------------------------------------------------------
 
@@ -292,8 +319,18 @@ CREATE TABLE `tbl_request` (
 --
 
 INSERT INTO `tbl_request` (`request_id`, `freelan_id`, `work_id`, `status`, `request_date`, `payment_date`, `agreement_date`) VALUES
-(1, 1, 2, 0, '2024-12-28', '', ''),
-(2, 1, 8, 1, '2024-12-28', '', '2024-12-28');
+(1, 1, 2, 1, '2024-12-28', '', '2025-01-01'),
+(2, 1, 8, 3, '2024-12-28', '', '2024-12-28'),
+(3, 2, 7, 0, '2025-01-01', '', ''),
+(4, 2, 10, 0, '2025-01-01', '', ''),
+(5, 2, 4, 0, '2025-01-01', '', ''),
+(6, 2, 1, 1, '2025-01-01', '', '2025-01-01'),
+(8, 3, 4, 0, '2025-01-01', '', ''),
+(9, 3, 9, 0, '2025-01-01', '', ''),
+(10, 3, 3, 1, '2025-01-01', '', '2025-01-01'),
+(11, 3, 7, 0, '2025-01-01', '', ''),
+(13, 5, 6, 0, '2025-01-01', '', ''),
+(14, 5, 5, 0, '2025-01-01', '', '');
 
 -- --------------------------------------------------------
 
@@ -309,6 +346,13 @@ CREATE TABLE `tbl_review` (
   `freelan_id` int(11) NOT NULL,
   `review_datetime` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_review`
+--
+
+INSERT INTO `tbl_review` (`review_id`, `client_id`, `user_rating`, `user_review`, `freelan_id`, `review_datetime`) VALUES
+(1, 4, 5, 'Not bad its ook', 1, '2025-01-01 17:27:57');
 
 -- --------------------------------------------------------
 
@@ -340,7 +384,8 @@ INSERT INTO `tbl_subcat` (`subcat_id`, `subcat_name`, `category_id`) VALUES
 (14, 'Asp.net', 9),
 (15, 'Adobe Express', 13),
 (16, 'JAVA-SPRINGBOOT-MYSQL', 9),
-(17, 'Blender', 12);
+(17, 'Blender', 12),
+(18, 'React Native', 11);
 
 -- --------------------------------------------------------
 
@@ -366,13 +411,16 @@ CREATE TABLE `tbl_work` (
 
 INSERT INTO `tbl_work` (`work_id`, `work_name`, `work_price`, `work_details`, `work_doc`, `client_id`, `subcat_id`, `work_final`, `work_status`) VALUES
 (1, 'Textile Shop Web App', '45000', 'I need a website to manage my textile shop looking for efficient freelancer for my budget', 'toaz.info-textile-shop-management-system-pr_58e91b', 2, 3, '', 0),
-(2, 'Online Coaching App Development', '17000', 'Develop an online coaching platform with video conferencing, course management, and payment gateway integration', 'Online_Coaching_App.docx', 2, 7, '', 0),
+(2, 'Online Coaching App Development', '17000', 'Develop an online coaching platform with video conferencing, course management, and payment gateway integration', 'Online_Coaching_App.docx', 2, 7, '', 1),
 (3, 'Logo Design for Startup', '17998', 'Create a professional logo for a tech startup focused on AI and machine learning.', 'Logo_Design.docx', 2, 15, '', 0),
 (4, 'SEO Optimization', '788888', 'Perform on-page and off-page SEO for an e-commerce website to improve search engine ranking.', 'SEO_Optimization.docx', 3, 16, '', 0),
 (5, 'I A S Coaching', '45000', 'App for students hoping to become an IAS Officer', 'fin_irjmets1668687649.pdf', 3, 12, '', 0),
 (6, 'Background music', '78888', 'need a background music for my upcoming shortfilm', 'Ashes_on_The_Fire_(進撃の巨人_The_Final_Season_Original', 3, 9, '', 0),
 (7, 'Movie song', '150000', 'looking for freelancers who can create a movie song for my new movie salaar', 'Enemy_(Slowed_Down)(256k).mp3', 4, 9, '', 0),
-(8, 'Movie Poster', '54444', 'i need movie poster for my upcoming movie', 'Screenshot 2024-12-20 195203.png', 4, 17, '', 1);
+(8, 'Movie Poster', '54444', 'i need movie poster for my upcoming movie', 'Screenshot 2024-12-20 195203.png', 4, 17, 'salaar.jpeg', 1),
+(9, 'Food delivery app', '300000', 'Food delivery app for my restaurant to minimize my effort in billing section', 'Food Delivery Managment System.pdf', 2, 18, '', 0),
+(10, 'Game online shop', '48000', 'Looking for fresh freelancer who can manage my online website that sells video games for xbox and playstation', 'Documentation.pdf', 4, 16, '', 0),
+(11, 'music app for my playlist', '832000', 'i need a music app for my favorite playlist so i can manage it in a simple way rather than opening a filemanager and i need dolby atmos 5.0,7.0 version supported for my audios', 'README.md', 4, 18, '', 0);
 
 --
 -- Indexes for dumped tables
@@ -476,19 +524,19 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT for table `tbl_chat`
 --
 ALTER TABLE `tbl_chat`
-  MODIFY `chat_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `chat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_client`
 --
 ALTER TABLE `tbl_client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_complaint`
 --
 ALTER TABLE `tbl_complaint`
-  MODIFY `complaint_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `complaint_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_district`
@@ -500,13 +548,13 @@ ALTER TABLE `tbl_district`
 -- AUTO_INCREMENT for table `tbl_freelan`
 --
 ALTER TABLE `tbl_freelan`
-  MODIFY `freelan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `freelan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_gallary`
 --
 ALTER TABLE `tbl_gallary`
-  MODIFY `gallary_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `gallary_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_place`
@@ -518,25 +566,25 @@ ALTER TABLE `tbl_place`
 -- AUTO_INCREMENT for table `tbl_request`
 --
 ALTER TABLE `tbl_request`
-  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tbl_review`
 --
 ALTER TABLE `tbl_review`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_subcat`
 --
 ALTER TABLE `tbl_subcat`
-  MODIFY `subcat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `subcat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tbl_work`
 --
 ALTER TABLE `tbl_work`
-  MODIFY `work_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `work_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

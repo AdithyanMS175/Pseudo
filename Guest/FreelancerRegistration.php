@@ -23,25 +23,25 @@ if (isset($_POST['btn_submit'])) {
   values('$name','$email','$place','$address','$photo','$proof','$password','$date','$contact','$Gender')";
   if ($confirmpass == $password) {
     if ($con->query($insQry)) {
-      ?>
+?>
       <script>
         alert('Freelancer Registration Successfull')
         window.location = 'Login.php';
       </script>
-      <?php
+    <?php
     } else {
-      ?>
+    ?>
       <script>
         alert('Freelancer Registration Failed')
       </script>
-      <?php
+    <?php
     }
   } else {
     ?>
     <script>
       alert("Password Doesn't Match")
     </script>
-    <?php
+<?php
   }
 }
 
@@ -77,6 +77,11 @@ if (isset($_POST['btn_submit'])) {
     input,
     select {
       color: black !important;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
     }
 
     /* Glassmorphism card effect */
@@ -221,7 +226,7 @@ if (isset($_POST['btn_submit'])) {
 
 
     option {
-      -webkit-appearance: none;
+
       background-color: blue !important;
     }
   </style>
@@ -237,16 +242,17 @@ if (isset($_POST['btn_submit'])) {
           d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
       </svg></a>
     <h3>Freelancer Registration</h3>
-    <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1" onsubmit="return validateForm()">
       <div class="form-group">
         <label for="txt_name">Name</label>
-        <input type="text" name="txt_name" id="txt_name" pattern="^[A-Z][a-zA-Z ]{1,}$" required oninput="nameCheck(this.value)" />
+        <input type="text" name="txt_name" id="txt_name" pattern="^[A-Z][a-zA-Z ]{1,}$" oninput="validateName()" required />
         <span id="namecheck"></span>
+        <div class="error" id="nameError"></div>
       </div>
       <div class="form-group">
         <label for="txt_email">Email</label>
-        <input type="email" name="txt_email" id="txt_email" required onChange="emailCheck(this.value)" />
-        <span id="emailcheck"></span>
+        <input type="email" name="txt_email" id="txt_email" oninput="validateEmail()" required />
+        <span class="error" id="emailError"></span>
       </div>
 
 
@@ -257,22 +263,23 @@ if (isset($_POST['btn_submit'])) {
           <label for="male">Male</label>
           <input type="radio" name="txt_gender" id="female" value="Female">
           <label for="female">Female</label>
+          <span class="error" id="genderError"></span>
         </div>
       </div>
 
 
       <div class="form-group">
         <label for="seldistrict">District</label>
-        <select name="seldistrict" id="seldistrict" required onChange="getPlace(this.value)">
-          <option value="select">-----select-----</option>
+        <select name="seldistrict" id="seldistrict" onChange="getPlace(this.value)" required>
+          <option value="">-----select-----</option>
           <?php
           $selqry = "select * from tbl_district";
           $district = $con->query($selqry);
           while ($data = $district->fetch_assoc()) {
             $i++;
-            ?>
+          ?>
             <option value="<?php echo $data['district_id'] ?>"><?php echo $data['district_name'] ?></option>
-            <?php
+          <?php
           }
           ?>
         </select>
@@ -280,33 +287,35 @@ if (isset($_POST['btn_submit'])) {
       <div class="form-group">
         <label for="selplace">Place</label>
         <select name="selplace" id="selplace" required>
-          <option value="select">-----select-----</option>
+          <option value="">-----select-----</option>
         </select>
       </div>
       <div class="form-group">
         <label for="txt_address">Address</label>
-        <textarea name="txt_address" id="txt_address" cols="45" rows="5" required
-          onSubmit="addressCheck(this.value)"></textarea>
-        <span id="addresscheck"></span><br>
+        <textarea name="txt_address" id="txt_address" cols="45" rows="5"
+          onSubmit="addressCheck(this.value)" required></textarea>
+        <span class="error" id="addressError"></span><br>
       </div>
       <div class="form-group">
         <label for="date">Date of Birth</label>
-        <input type="date" name="date" id="dateInput" required oninput="dobCheck(this.value)" />
-        <span id="dobcheck"></span><br>
+        <input type="date" name="date" id="dateInput" oninput="dobCheck()" required />
+        <span class="error" id="DobError"></span><br>
       </div>
       <div class="form-group">
         <label for="txt_contact">Contact No</label>
-        <input type="tel" name="txt_contact" id="txt_contact" required oninput="contactCheck(this.value)"
-          pattern="[6-9]{1}[0-9]{9}" />
-        <span id="contactcheck"></span>
-        <span id="clength" class="invalid">length should be 10 and begin with number between 6 and 9 </span><br />
+        <input type="tel" name="txt_contact" id="txt_contact" oninput="validateContact()"
+          pattern="[6-9]{1}[0-9]{9}" required />
+        <span class="error" id="contactError"></span>
+        <!-- <span id="clength" class="invalid">length should be 10 and begin with number between 6 and 9 </span><br /> -->
       </div>
 
 
 
       <div class="form-group">
         <label for="photo">Photo</label>
-        <input type="file" name="photo" id="photo" class="form-control-file" required />
+        <input type="file" name="photo" id="photo" class="form-control-file" oninput="validatePhoto()" required />
+        <span class="error" id="filephoto"></span>
+
       </div>
 
 
@@ -315,19 +324,18 @@ if (isset($_POST['btn_submit'])) {
 
       <div class="form-group">
         <label for="proof">Proof</label>
-        <input type="file" name="proof" id="proof" class="form-control-file" required />
+        <input type="file" name="proof" id="proof" class="form-control-file" oninput="validateProof()" required />
+        <span class="error" id="fileproof"></span>
       </div>
 
 
 
       <div class="form-group">
         <label for="txt_password">Password</label>
-        <input type="password" name="txt_password" id="txt_password" required oninput="passCheck(this.value)" />
+        <input type="password" name="txt_password" id="txt_password" oninput="validatePassword()" required />
         <span id="passcheck">
-          <span id="uppercase" class="invalid">At least one uppercase letter</span><br />
-          <span id="lowercase" class="invalid">At least one lowercase letter</span><br />
-          <span id="number" class="invalid">At least one number</span><br />
-          <span id="length" class="invalid">Length of password should be in between 6 to 16</span><br />
+          <span id="passwordError" class="invalid"></span><br />
+         
         </span>
       </div>
       <div class="form-group">
@@ -343,187 +351,169 @@ if (isset($_POST['btn_submit'])) {
 
   <script src="../Asset/JQ/jQuery.js"></script>
   <script>
-    document.getElementById('dateInput').setAttribute('max', new Date().toISOString().split('T')[0]);
+    document.getElementById("dateInput").setAttribute("max", new Date().toISOString().split("T")[0]);
 
     function getPlace(did) {
       $.ajax({
         url: "../Asset/AjaxPages/AjaxPlace.php?did=" + did,
-        success: function (result) {
+        success: function(result) {
 
           $("#selplace").html(result);
         }
       });
     }
-    
-
-    function emailCheck(email) {
-      const submitButton = document.getElementById('btn_submit');
-      const isValidEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(email);
-      const emailCheckSpan = document.getElementById('emailcheck');
-
-      if (isValidEmail) {
-        submitButton.removeAttribute('disabled');
-        emailCheckSpan.textContent = ''; // Clear any previous error message
-        $.ajax({
-          url: "../Asset/AjaxPages/AjaxEmail.php?email=" + email,
-          success: function (result) {
-            if (result == "EXISTS") {
-              submitButton.setAttribute('disabled', 'true');
-              emailCheckSpan.textContent = 'Email already exists'; // Display error message
-            } else {
-              submitButton.removeAttribute('disabled');
-              emailCheckSpan.textContent = ''; // Enable the submit button
-            }
-
-          }
-        });
-      } else {
-        submitButton.setAttribute('disabled', 'true');
-        emailCheckSpan.textContent = 'Invalid email format'; // Display error message
-      }
 
 
 
-    }
-
-
-
-    function nameCheck(name) {
-      const submitButton = document.getElementById('btn_submit');
-      const isValidName = /^[A-Z][a-zA-Z ]{1,}$/.test(name); // Regular expression for capital first letter and minimum length of 2
-      const nameCheckSpan = document.getElementById('namecheck');
-
-      if (isValidName) {
-        submitButton.removeAttribute('disabled');
-        nameCheckSpan.textContent = ''; // Enable the submit button
-      } else {
-        submitButton.setAttribute('disabled', 'true'); // Disable the submit button
-        nameCheckSpan.textContent = 'Invalid Name'; // Display an error message
-      }
-    }
-
-    function passCheck(password) {
-
-      const submitButton = document.getElementById('btn_submit');
-      const uppercase = document.getElementById('uppercase');
-      const lowercase = document.getElementById('lowercase');
-      const number = document.getElementById('number');
-      const length = document.getElementById('length');
-
-
+    function validatePassword() {
+      const password = document.getElementById("txt_password").value;
+      const passwordError = document.getElementById("passwordError");
 
       const uppercasePattern = /[A-Z]/;
       const lowercasePattern = /[a-z]/;
       const numberPattern = /[0-9]/;
       const lengthPattern = /^.{6,16}$/;
 
-      if (lengthPattern.test(password)) {
+      let missingCriteria = [];
+      if (!uppercasePattern.test(password)) missingCriteria.push("at least one uppercase letter");
+      if (!lowercasePattern.test(password)) missingCriteria.push("at least one lowercase letter");
+      if (!numberPattern.test(password)) missingCriteria.push("at least one number");
+      if (!lengthPattern.test(password)) missingCriteria.push("a length between 6 and 16 characters");
 
-        length.classList.add('valid');
-        length.classList.remove('invalid');
-
+      if (missingCriteria.length > 0) {
+        passwordError.textContent = "Password must contain " + missingCriteria.join(", ") + ".";
+        passwordError.classList.add("error");
+        return false;
       } else {
-
-        length.classList.remove('valid');
-        length.classList.add('invalid');
-
-      }
-
-      if (uppercasePattern.test(password)) {
-        uppercase.classList.add('valid');
-        uppercase.classList.remove('invalid');
-
-
-      } else {
-        uppercase.classList.remove('valid');
-        uppercase.classList.add('invalid');
-
-      }
-
-      if (lowercasePattern.test(password)) {
-
-        lowercase.classList.remove('invalid');
-        lowercase.classList.add('valid');
-
-      } else {
-        lowercase.classList.remove('valid');
-        lowercase.classList.add('invalid');
-
-      }
-
-      if (numberPattern.test(password)) {
-        number.classList.remove('invalid');
-        number.classList.add('valid');
-
-      } else {
-        number.classList.remove('valid');
-        number.classList.add('invalid');
-
-      }
-
-      if (uppercasePattern.test(password) && numberPattern.test(password) && lowercasePattern.test(password) && lengthPattern.test(password)) {
-        submitButton.removeAttribute('disabled');
-      } else {
-        submitButton.setAttribute('disabled', 'true');
-      }
-
-
-    }
-
-
-
-    function contactCheck(contact) {
-      const clength = document.getElementById('clength');
-      console.log("Length: " + typeof (length));
-      const lengthPattern = /^[6-9][0-9]{9}$/;
-
-      if (lengthPattern.test(contact)) {
-        clength.classList.add('valid');
-        clength.classList.remove('invalid');
-      } else {
-        clength.classList.remove('valid');
-        clength.classList.add('invalid');
-      }
-
-
-
-    }
-
-
-
-
-    function dobCheck(dob) {
-      const submitButton = document.getElementById('btn_submit');
-      const isValidDob = /^\d{4}-\d{2}-\d{2}$/.test(dob); // Regular expression for date format YYYY-MM-DD
-      const dobCheckSpan = document.getElementById('dobcheck');
-
-      if (isValidDob) {
-        submitButton.removeAttribute('disabled');
-        dobCheckSpan.textContent = ''; // Enable the submit button
-      } else {
-        submitButton.setAttribute('disabled', 'true'); // Disable the submit button
-        dobCheckSpan.textContent = 'Invalid date of birth format'; // Display an error message
+        passwordError.textContent = "";
+        passwordError.classList.remove("error");
+        return true;
       }
     }
 
+    function validateName() {
+      const name = document.getElementById("txt_name").value;
+      const nameError = document.getElementById("nameError");
 
-
-
-
-
-    function addressCheck(address) {
-      const submitButton = document.getElementById('btn_submit');
-      const addressCheckSpan = document.getElementById('addresscheck');
-      const isValidAddress = /^[a-zA-Z0-9\s,.-]{10,}$/.test(address); // Regular expression for address format
-      if (isValidAddress) {
-        submitButton.removeAttribute('disabled');
-        addressCheckSpan.textContent = ''; // Enable the submit button
+      if (/^[A-Z][a-zA-Z ]*$/.test(name)) {
+        nameError.textContent = "";
+        return true;
       } else {
-        submitButton.setAttribute('disabled', 'true');
-        addressCheckSpan.textContent = 'Invalid address format'; // Display an error message
+        nameError.textContent = "Name must start with a capital letter and contain only alphabets.";
+        return false;
       }
+    }
+
+    function validatePhoto() {
+      const photoInput = document.getElementById("photo");
+      const photoError = document.getElementById("filephoto");
+
+      if (photoInput.files.length > 0) {
+        photoError.textContent = "";
+        return true;
+      } else {
+        photoError.textContent = "Please upload a photo.";
+        return false;
+      }
+    }
+
+    function validateProof() {
+      const proofInput = document.getElementById("proof"); // Input field for proof
+      const proofError = document.getElementById("fileproof"); // Span for error message
+
+      if (proofInput.files.length > 0) {
+        proofError.textContent = ""; // Clear error if a file is selected
+        return true;
+      } else {
+        proofError.textContent = "Please upload an ID proof."; // Set error message if no file is selected
+        return false;
+      }
+    }
+
+    function validateContact() {
+      const contact = document.getElementById("txt_contact").value;
+      const contactError = document.getElementById("contactError");
+
+      if (/^[6-9]\d{9}$/.test(contact)) {
+        contactError.textContent = "";
+        return true;
+      } else {
+        contactError.textContent = "Contact must start with 6, 7, 8, or 9 and be 10 digits.";
+        return false;
+      }
+    }
+
+    function validateEmail() {
+      const email = document.getElementById("txt_email").value;
+      const emailError = document.getElementById("emailError");
+
+      if (/^[\w-.]+@gmail\.com$/.test(email)) {
+        emailError.textContent = "";
+        return true;
+      } else {
+        emailError.textContent = "Please enter a valid Gmail address.";
+        return false;
+      }
+    }
+
+    function validateGender() {
+      const genderError = document.getElementById("genderError");
+      const isGenderSelected = document.querySelector("input[name='txt_gender']:checked");
+
+      if (isGenderSelected) {
+        genderError.textContent = "";
+        return true;
+      } else {
+        genderError.textContent = "Please select a gender.";
+        return false;
+      }
+    }
+
+    function validateAddress() {
+      const address = document.getElementById("txt_address").value;
+      const addressError = document.getElementById("addressError");
+
+      if (/^[a-zA-Z0-9\s,.-]{10,}$/.test(address)) {
+        addressError.textContent = "";
+        return true;
+      } else {
+        addressError.textContent = "Invalid address format. It must be at least 10 characters long.";
+        return false;
+      }
+    }
+
+    function dobCheck() {
+      const dob = document.getElementById("dateInput").value;
+      const dobError = document.getElementById("DobError");
+
+      if (/^\d{4}-\d{2}-\d{2}$/.test(dob)) {
+        dobError.textContent = "";
+        return true;
+      } else {
+        dobError.textContent = "Please enter a valid date of birth.";
+        return false;
+      }
+    }
+
+    function validateForm() {
+      const validations = [
+        validateName(),
+        validateGender(),
+        validateContact(),
+        validateEmail(),
+        validatePhoto(),
+        validateProof(),
+        validatePassword(),
+        dobCheck(),
+        validateAddress()
+      ];
+
+      console.log("Validation results:", validations);
+
+      return validations.every((isValid) => isValid);
     }
   </script>
-  
+
+
 
 </html>
