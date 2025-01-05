@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2025 at 04:55 PM
+-- Generation Time: Jan 05, 2025 at 06:46 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -123,7 +123,9 @@ INSERT INTO `tbl_client` (`client_id`, `client_name`, `client_email`, `place_id`
 (2, 'Adarsh P S', 'adarshps7700@gmail.com', 28, 'kannur house,paramadathil', '10M.jpeg', 'OIP.jpeg', 'Adarsh@123', '2003-07-08', '8529637414', 1, 'Male'),
 (3, 'Jerin Basil John', 'jerin145@gmail.com', 15, 'pattimattom house', '7M.jpeg', 'd5dpp70g_car_120x90_14_January_22.webp', 'Jerin@123', '2004-06-05', '9865327454', 1, 'Male'),
 (4, 'Fariz Sidheque', 'fariz@gmail.com', 39, 'palakkad house , porampalli veedu', '3M.jpeg', 'OIP.jpeg', 'Fariz@123', '2001-06-08', '9865325487', 1, 'Male'),
-(5, 'sidharth', 'sidhart@gmail.com', 20, 'keeradam house,managalserry', 'man3.jpeg', 'd5dpp70g_car_120x90_14_January_22.webp', 'Sidharth@123', '2001-01-05', '7894561236', 0, 'Male');
+(5, 'sidharth', 'sidhart@gmail.com', 20, 'keeradam house,managalserry', 'man3.jpeg', 'd5dpp70g_car_120x90_14_January_22.webp', 'Sidharth@123', '2001-01-05', '7894561236', 0, 'Male'),
+(8, 'Biji Mol', 'biji@gmail.com', 27, 'muvattupuzha house kadvanthra', 'woman3.jpeg', 'OIP.jpeg', 'Biji@123', '1987-02-01', '9865326598', 0, 'Female'),
+(9, 'Fak fak', 'fauk@gmail.com', 28, 'payyanur house kannur kozikode', '8.jpeg', 'download.jpeg', 'Fauk@123', '1988-08-07', '9898989898', 2, 'Female');
 
 -- --------------------------------------------------------
 
@@ -150,7 +152,6 @@ CREATE TABLE `tbl_complaint` (
 INSERT INTO `tbl_complaint` (`complaint_id`, `complaint_details`, `complaint_date`, `complaint_reply`, `freelan_id`, `client_id`, `request_id`, `complaint_status`, `complaint_rdate`) VALUES
 (4, 'hhhhhhhh\r\n', '2025-01-01', '', 1, 0, 0, 1, ''),
 (5, 'hello', '2025-01-01', 'well it may be due to server error', 1, 0, 2, 2, '2025-01-01'),
-(6, 'flsdfksk lksdjfslfjlksjf dlfj slkfjlksdfjslkj slfjl sjfskj slfjflsd jflksj flsdfjlskjffslkflskjf lkdj lksj lkdfjk sjflksj flsdjfl jfklj klfjsdklfj lsdfj slfj sllfjslfsdjfnsjknf sn j njfns dnlfnsln fflnsll fnsllfn ldn lsfnslff slfnsk nfls nl lk nflknsdll ndll nfln lfn lnflsdf lfndjfnweoejrwoejrow jf nn lkd fkdf ldfljfldkf lj dldkff llj lfj j l   jd jfdifj djfd f doijf idjf djf oidf jdi ', '2025-01-01', '', 1, 0, 2, 1, ''),
 (7, 'hasn\'t completed yet', '2025-01-01', '', 1, 0, 2, 1, ''),
 (8, 'poster was bad', '2025-01-01', '', 1, 0, 2, 1, ''),
 (9, 'user has different opinions', '2025-01-01', '', 0, 4, 2, 0, '');
@@ -217,7 +218,9 @@ INSERT INTO `tbl_freelan` (`freelan_id`, `freelan_name`, `freelan_email`, `place
 (3, 'Arsha Balakrishnan', 'arsha154@gmail.com', 47, 'kalpatte house manakkapuram road', '1.jpeg', 'OIP.jpeg', 'Arsha@123', '2004-09-09', '8578895636', 1, 'Male'),
 (4, 'emeesha', 'emeesha174@gmail.com', 34, 'paravur house,malikapuram', '4.jpeg', 'OIP.jpeg', 'Emeesha@123', '1999-09-09', '9356897845', 1, 'Male'),
 (5, 'Adarsh Manoj', 'adarshmanoj@gmail.com', 42, 'mangalathunada house,sabarimala', '5M.jpeg', 'OIP.jpeg', 'Adarsh@123', '2003-08-09', '9887655432', 1, 'Male'),
-(6, 'vivek', 'vivek@gmail.com', 42, 'Adichipuzha dam near kottakkal', 'man1.jpeg', 'download.jpeg', 'Vivek@123', '2004-02-01', '8989565623', 0, 'Male');
+(6, 'vivek', 'vivek@gmail.com', 42, 'Adichipuzha dam near kottakkal', 'man1.jpeg', 'download.jpeg', 'Vivek@123', '2004-02-01', '8989565623', 0, 'Male'),
+(12, 'Ananthkrishnan', 'anandhu@gmail.com', 25, 'mangalathunadapo,ernakulamdsd ', 'man3.jpeg', 'd5dpp70g_car_120x90_14_January_22.webp', 'Ananth@123', '2005-05-02', '8050565698', 0, 'Male'),
+(13, 'FakeFake', 'fake@gmail.com', 40, 'fakefakefakefakefakefakefakefake', '2M.jpeg', 'OIP.jpeg', 'Fake@123', '2007-05-02', '7012456587', 2, 'Male');
 
 -- --------------------------------------------------------
 
@@ -530,7 +533,7 @@ ALTER TABLE `tbl_chat`
 -- AUTO_INCREMENT for table `tbl_client`
 --
 ALTER TABLE `tbl_client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_complaint`
@@ -548,7 +551,7 @@ ALTER TABLE `tbl_district`
 -- AUTO_INCREMENT for table `tbl_freelan`
 --
 ALTER TABLE `tbl_freelan`
-  MODIFY `freelan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `freelan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_gallary`
