@@ -149,7 +149,7 @@ include('SessionValidator.php');
                         <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
                         <path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z" />
                       </svg></span>
-                    <span class="sidenav-normal"> Freelancer </span>
+                    <span class="sidenav-normal">Rejected Freelancers </span>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -158,7 +158,7 @@ include('SessionValidator.php');
                         <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
                         <path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z" />
                       </svg></span>
-                    <span class="sidenav-normal"> Client </span>
+                    <span class="sidenav-normal">Rejected Clients </span>
                   </a>
                 </li>
               </ul>
@@ -790,8 +790,7 @@ include('SessionValidator.php');
                     <a href="HomepageA.php" class="nav-link text-muted" target="_blank">Dashboard</a>
                   </li>
                   <li class="nav-item">
-                    <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About
-                      Us</a>
+                    <a href="Worklist.php" class="nav-link text-muted" target="_blank">Worklist</a>
                   </li>
                   <!-- <li class="nav-item">
                   <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
