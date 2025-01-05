@@ -1,12 +1,6 @@
 <?php
 include('../Asset/Connection/Connection.php');
-
 include('Header.php');
-
-
-
-
-
 if (isset($_POST['btn_add'])) {
   $Wname = $_POST['txt_workname'];
   $Details = $_POST['txt_details'];

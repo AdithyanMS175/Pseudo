@@ -42,7 +42,7 @@ include('Header.php');
                     $selCat = "SELECT * from tbl_category";
                     $result = $con->query($selCat);
                     while ($row = $result->fetch_assoc()) {
-                        ?>
+                    ?>
                         <li class="list-group-item">
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -52,7 +52,7 @@ include('Header.php');
                                 </label>
                             </div>
                         </li>
-                        <?php
+                    <?php
                     }
                     ?>
                 </ul>
@@ -60,7 +60,7 @@ include('Header.php');
 
             </div>
             <div class="col-lg-9">
-                <h5 class="text-center" id="textChange">All Products</h5>
+                <h5 class="text-center" id="textChange">All Works</h5>
                 <hr>
                 <div class="text-center">
                     <img src="../Asset/Templates/Search/loader.gif" id='loder' width="200" style="display: none" />
@@ -76,20 +76,17 @@ include('Header.php');
     <script src="../Asset/Templates/Search/bootstrap.min.js"></script>
     <script src="../Asset/Templates/Search/popper.min.js"></script>
     <script>
-
-
         function changeSub() {
             var cat = get_filter_text('category');
             if (cat.length !== 0) {
                 $.ajax({
                     url: "../Asset/AjaxPages/AjaxSearchSubCat.php?did=" + cat,
-                    success: function (response) {
+                    success: function(response) {
                         $("#subcat").html(response);
                     }
                 });
 
-            }
-            else {
+            } else {
                 $("#subcat").html("");
             }
 
@@ -97,7 +94,7 @@ include('Header.php');
             function get_filter_text(text_id) {
                 var filterData = [];
 
-                $('#' + text_id + ':checked').each(function () {
+                $('#' + text_id + ':checked').each(function() {
                     filterData.push("\'" + $(this).val() + "\'");
                 });
                 return filterData;
@@ -119,7 +116,7 @@ include('Header.php');
 
             $.ajax({
                 url: "../Asset/AjaxPages/AjaxSearchWork.php?action=" + action + "&category=" + category + "&subcategory=" + subcategory + "&name=" + name,
-                success: function (response) {
+                success: function(response) {
                     $("#result").html(response);
                     $("#loder").hide();
                     $("#textChange").text("Browse Works");
@@ -134,12 +131,11 @@ include('Header.php');
         function get_filter_text(text_id) {
             var filterData = [];
 
-            $('#' + text_id + ':checked').each(function () {
+            $('#' + text_id + ':checked').each(function() {
                 filterData.push($(this).val());
             });
             return filterData;
         }
-
     </script>
 </body>
 <?php
