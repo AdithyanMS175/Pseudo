@@ -34,7 +34,7 @@ include('Header.php');
             ?>
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="../Asset/Files/Work/Rough/<?php echo $data['gallary_photo'] ?>" class="card-img-top" alt="Rough Work Image">
+                   <a href="../Asset/Files/Work/Rough/<?php echo $data['gallary_photo'] ?>"> <img src="../Asset/Files/Work/Rough/<?php echo $data['gallary_photo'] ?>" class="card-img-top" alt="Rough Work Image"></a>
                 </div>
             </div>
             <?php
