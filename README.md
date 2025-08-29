@@ -102,8 +102,6 @@ pseudo/
 ├── Guest/        # Homepage, registration, forgot password
 ├── Db/           # Database connection/config
 ├── index.php     # Landing page
-├── login.php     # Login page
-├── register.php  # Registration page
 └── README.md
 
 🚀 Future Enhancements
