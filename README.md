@@ -124,6 +124,7 @@ pseudo/
 
 PSEUDO – Freelance Job Marketplace
 Developed by Adithyan M S
+Portfolio: https://adithyan-m-s.vercel.app
 
 
 ---
