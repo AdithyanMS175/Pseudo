@@ -26,12 +26,12 @@
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'pseudominipro@gmail.com'; // Your gmail
-        $mail->Password = 'monj egps suas ggiw'; // Your gmail app password
+        $mail->Username = '@gmail.com'; // Your gmail
+        $mail->Password = ''; // Your gmail app password
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
-        $mail->setFrom('pseudominipro@gmail.com'); // Your gmail
+        $mail->setFrom('@gmail.com'); // Your gmail
 
         $mail->addAddress($email);
 
