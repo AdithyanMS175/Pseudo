@@ -57,7 +57,7 @@ This project simulates real-world platforms like **Upwork** or **Fiverr**, makin
 | **Frontend** | HTML, CSS, JavaScript, Bootstrap |
 | **Backend**  | PHP (Core / OOP) |
 | **Database** | MySQL |
-| **Server**   | Apache (XAMPP / LAMP / WAMP) |
+| **Server**   | Apache (XAMPP) |
 
 ---
 
@@ -65,15 +65,11 @@ This project simulates real-world platforms like **Upwork** or **Fiverr**, makin
 
 1️⃣ **Clone the Repository**  
 ```bash
-git clone https://github.com/your-username/pseudo.git
+git clone https://github.com/AdithyanMS175/pseudo.git
 
 2️⃣ Move Project to Server Directory
 
 XAMPP: htdocs/pseudo
-
-WAMP: www/pseudo
-
-LAMP: /var/www/html/pseudo
 
 3️⃣ Import Database
 
