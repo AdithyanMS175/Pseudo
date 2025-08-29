@@ -1,70 +1,73 @@
-PSEUDO – Freelance Job Marketplace
-📌 Project Overview
+# 🌐 PSEUDO – Freelance Job Marketplace  
 
-PSEUDO is a freelance job marketplace built with HTML,CSS,JavaScript PHP and MySQL.
-It connects Clients who post projects with Freelancers who apply and work on them, while Admins manage and monitor the platform.
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)  
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)  
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)  
 
-This project simulates real-world platforms like Upwork or Fiverr, making it a perfect academic project to demonstrate skills in web development, database design, and marketplace workflows.
+---
 
-👥 Modules & Features
-1️⃣ Admin Module
+## 📌 Project Overview  
 
-🔐 Admin Authentication
+**PSEUDO** is a freelance job marketplace built with **HTML, CSS, JavaScript, PHP, and MySQL**.  
+It connects **Clients** who post projects with **Freelancers** who apply and work on them, while **Admins** manage and monitor the platform.  
 
-👥 Manage Clients & Freelancers
+This project simulates real-world platforms like **Upwork** or **Fiverr**, making it a perfect academic project to demonstrate skills in:  
+- 🌐 Web Development  
+- 🗄️ Database Design  
+- ⚡ Marketplace Workflows  
 
-📋 View & manage all posted jobs
+---
 
-🚨 Handle complaints raised by users
+## 👥 Modules & Features  
 
+### 🔑 1. Admin Module  
+- 🔐 Secure Login for Admin  
+- 👥 Manage Clients & Freelancers  
+- 📋 View & Manage all Posted Jobs  
+- 🚨 Handle User Complaints  
 
-2️⃣ Client Module
+---
 
-📝 Register/Login as a Client
+### 👤 2. Client Module  
+- 📝 Register/Login as a Client  
+- 📢 Post new projects/jobs with budget, deadline & requirements  
+- 🔎 Advanced Search & Filters to find freelancers  
+- 💬 Real-time Chat with freelancers  
+- ⭐ Rate & Review freelancers after project completion  
+- 💳 Make Payments (Demo Integration)  
+- 📂 Upload **screenshots & rough works** for project clarity  
 
-📢 Post new projects/jobs with budget, deadline, and requirements
+---
 
-🔎 Use advanced search & filters to find freelancers
+### 💼 3. Freelancer Module  
+- 📝 Register/Login as a Freelancer  
+- 🔎 Browse & Apply/Bid for Jobs  
+- 💬 Chat with Clients regarding job details  
+- 📂 Submit **screenshots & rough works**  
+- ⭐ Receive Ratings & Reviews from Clients  
+- 💳 Request/Receive Payments (Demo Integration)  
+- 🚨 Raise Complaints if needed  
 
-💬 Chat with freelancers in real-time
+---
 
-⭐ Rate & review freelancers after project completion
+## 🛠️ Tech Stack  
 
-💳 Make payments to freelancers (demo integration)
+| Category    | Technology |
+|-------------|------------|
+| **Frontend** | HTML, CSS, JavaScript, Bootstrap |
+| **Backend**  | PHP (Core / OOP) |
+| **Database** | MySQL |
+| **Server**   | Apache (XAMPP / LAMP / WAMP) |
 
-📂 Upload screenshots & rough works for project clarity
+---
 
-3️⃣ Freelancer Module
+## ⚙️ Installation & Setup  
 
-📝 Register/Login as a Freelancer
-
-🔎 Browse and apply/bid for available jobs
-
-💬 Chat with clients regarding job details
-
-📂 Submit screenshots & rough works to clients
-
-⭐ Receive ratings & reviews from clients
-
-💳 Request/receive payments (demo integration)
-
-🚨 Raise complaints if needed
-
-🛠️ Tech Stack
-
-Frontend: HTML, CSS, JavaScript, Bootstrap
-
-Backend: PHP (Core or OOP-based)
-
-Database: MySQL
-
-Server: Apache (XAMPP / LAMP / WAMP)
-
-⚙️ Installation & Setup
-1. Clone the Repository
+1️⃣ **Clone the Repository**  
+```bash
 git clone https://github.com/your-username/pseudo.git
 
-2. Move Project to Server Directory
+2️⃣ Move Project to Server Directory
 
 XAMPP: htdocs/pseudo
 
@@ -72,60 +75,57 @@ WAMP: www/pseudo
 
 LAMP: /var/www/html/pseudo
 
-3. Import Database
+3️⃣ Import Database
 
 Open phpMyAdmin
 
 Create a new database:
 
-CREATE DATABASE pseudo;
 
-
-Import the pseudo.sql file from the /database folder
-
-4. Configure Database Connection
-
-Update config.php with your database credentials:
+4️⃣ Configure Database Connection (config.php)
 
 $host = "localhost";
-$user = "root";   // default user
-$pass = "";       // default password
+$user = "root";
+$pass = "";
 $db   = "pseudo";
 $conn = mysqli_connect($host, $user, $pass, $db);
 
-5. Run the Project
 
-Open browser and navigate to:
+5️⃣ Run the Project
+Open your browser and go to:
 
 http://localhost/pseudo
 
+
 📂 Project Structure
 pseudo/
-├── assets/           # CSS, JS, Images
-├── database/         # Database SQL file
-├── includes/         # Config, Header, Footer
-├── modules/          # Admin, Client, Freelancer
-├── pages/            # Job posting, chat, complaint, payments
-├── index.php         # Landing page
-├── login.php         # Login page
-├── register.php      # Registration page
+├── Asset/        # CSS, JS, Images
+├── Admin/        # Manage clients, freelancers, jobs
+├── Client/       # Job posting, chat, complaints, payments
+├── Freelan/      # Work search, chat, complaints
+├── Guest/        # Homepage, registration, forgot password
+├── Db/           # Database connection/config
+├── index.php     # Landing page
+├── login.php     # Login page
+├── register.php  # Registration page
 └── README.md
-
-📸 Screenshots
-
-(Add screenshots of Login, Dashboard, Job Posting, Chat, Complaint, Payments, etc.)
 
 🚀 Future Enhancements
 
-Real payment gateway integration (PayPal, Razorpay)
+💳 Real Payment Gateway Integration (PayPal, Razorpay)
 
-Email/SMS notifications for bids, messages, and complaints
+📩 Email/SMS Notifications for bids, messages & complaints
 
-AI-based freelancer recommendation system
+🤖 AI-based Freelancer Recommendation System
 
-Mobile-friendly responsive design
+📱 Mobile-Friendly Responsive Design
 
 👨‍💻 Author
 
 PSEUDO – Freelance Job Marketplace
-Developed by [Your Name]
+Developed by Adithyan M S
+
+
+---
+
+
