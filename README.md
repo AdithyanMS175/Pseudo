@@ -106,13 +106,9 @@ pseudo/
 
 🚀 Future Enhancements
 
-💳 Real Payment Gateway Integration (PayPal, Razorpay)
+💳 Prototype of Payment Gateway Integration (Credit, Debit)
 
-📩 Email/SMS Notifications for bids, messages & complaints
-
-🤖 AI-based Freelancer Recommendation System
-
-📱 Mobile-Friendly Responsive Design
+💻 Desktop friendly, Responsive Design
 
 👨‍💻 Author
 
