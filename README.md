@@ -92,7 +92,6 @@ Open your browser and go to:
 
 http://localhost/pseudo
 
-
 📂 Project Structure
 pseudo/
 ├── Asset/        # CSS, JS, Images
