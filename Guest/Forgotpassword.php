@@ -31,7 +31,11 @@
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
+<<<<<<< HEAD
         $mail->setFrom(''); // Your gmail
+=======
+        $mail->setFrom('@gmail.com'); // Your gmail
+>>>>>>> 9a7dc9c2266c37757f2121ce1c1652c9466aa789
 
         $mail->addAddress($email);
 

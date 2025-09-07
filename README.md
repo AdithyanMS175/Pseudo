@@ -1,4 +1,122 @@
-The project entitled “PSEUDO” is a web-based application. This project aims to develop a web-based application using PHP, HTML, Java script and CSS to bridge the gap between job seekers and employers. The platform is specially designed to cater to individuals who are unemployed due to the lack of formal degree certificates, house wife’s who have lost jobs due to familiar responsibilities and student seeking part time opportunities.
-The application will provide an interface for users to showcase their skills in various fields such as coding, designing, graphic designing, and other computer related skills. It will use a robust matching algorithm to connect these individuals with potential employees who value skills over formal education. The platform will also feature a user-friendly interface.
-By leveraging the power of the internet and digital technologies. This project seeks to democrat employment opportunities and faster a more inclusive job market.
-The project include 4 modules are (Admin, Client, User,Guest).
+# 🌐 PSEUDO – Freelance Job Marketplace  
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+
+
+---
+
+## 📌 Project Overview  
+
+**PSEUDO** is a freelance job marketplace built with **HTML, CSS, JavaScript, PHP, and MySQL**.  
+It connects **Clients** who post projects with **Freelancers** who apply and work on them, while **Admins** manage and monitor the platform.  
+
+This project simulates real-world platforms like **Upwork** or **Fiverr**, making it a perfect academic project to demonstrate skills in:  
+- 🌐 Web Development  
+- 🗄️ Database Design  
+- ⚡ Marketplace Workflows  
+
+---
+
+## 👥 Modules & Features  
+
+### 🔑 1. Admin Module  
+- 🔐 Secure Login for Admin  
+- 👥 Manage Clients & Freelancers  
+- 📋 View & Manage all Posted Jobs  
+- 🚨 Handle User Complaints  
+
+---
+
+### 👤 2. Client Module  
+- 📝 Register/Login as a Client  
+- 📢 Post new projects/jobs with budget, deadline & requirements  
+- 🔎 Advanced Search & Filters to find freelancers  
+- 💬 Real-time Chat with freelancers  
+- ⭐ Rate & Review freelancers after project completion  
+- 💳 Make Payments (Demo Integration)  
+- 📂 Upload **screenshots & rough works** for project clarity  
+
+---
+
+### 💼 3. Freelancer Module  
+- 📝 Register/Login as a Freelancer  
+- 🔎 Browse & Apply/Bid for Jobs  
+- 💬 Chat with Clients regarding job details  
+- 📂 Submit **screenshots & rough works**  
+- ⭐ Receive Ratings & Reviews from Clients  
+- 💳 Request/Receive Payments (Demo Integration)  
+- 🚨 Raise Complaints if needed  
+
+---
+
+## 🛠️ Tech Stack  
+
+| Category    | Technology |
+|-------------|------------|
+| **Frontend** | HTML, CSS, JavaScript, Bootstrap |
+| **Backend**  | PHP (Core / OOP) |
+| **Database** | MySQL |
+| **Server**   | Apache (XAMPP) |
+
+---
+
+## ⚙️ Installation & Setup  
+
+1️⃣ **Clone the Repository**  
+```bash
+git clone https://github.com/AdithyanMS175/pseudo.git
+
+2️⃣ Move Project to Server Directory
+
+XAMPP: htdocs/pseudo
+
+3️⃣ Import Database
+
+Open phpMyAdmin
+
+Create a new database:
+
+
+4️⃣ Configure Database Connection (config.php)
+
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "pseudo";
+$conn = mysqli_connect($host, $user, $pass, $db);
+
+
+5️⃣ Run the Project
+Open your browser and go to:
+
+http://localhost/pseudo
+
+
+📂 Project Structure
+pseudo/
+├── Asset/        # CSS, JS, Images
+├── Admin/        # Manage clients, freelancers, jobs
+├── Client/       # Job posting, chat, complaints, payments
+├── Freelan/      # Work search, chat, complaints
+├── Guest/        # Homepage, registration, forgot password
+├── Db/           # Database connection/config
+├── index.php     # Landing page
+└── README.md
+
+🚀 Future Enhancements
+
+💳 Prototype of Payment Gateway Integration (Credit, Debit)
+
+💻 Desktop friendly, Responsive Design
+
+👨‍💻 Author
+
+PSEUDO – Freelance Job Marketplace
+Developed by Adithyan M S
+
+
+
+---
+
+
